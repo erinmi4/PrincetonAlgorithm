@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module type="JAVA_MODULE" version="4">
+  <component name="CheckStyle-IDEA-Module" serialisationVersion="2">
+    <option name="activeLocationsIds" />
+  </component>
   <component name="NewModuleRootManager">
     <output url="file://$MODULE_DIR$" />
     <output-test url="file://$MODULE_DIR$" />
@@ -11,8 +14,9 @@
       <excludePattern pattern="*.class" />
       <excludePattern pattern=".noai" />
     </content>
-    <orderEntry type="inheritedJdk" />
+    <orderEntry type="jdk" jdkName="17" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="algs4" level="project" />
+    <orderEntry type="library" name="algs5" level="project" />
   </component>
 </module>
