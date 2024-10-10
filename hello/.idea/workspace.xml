@@ -5,10 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c1e4f978-b3bd-4ae1-84e9-9e1170bce808" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/../Library/algs4.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/algs5.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Algorithms, Part I.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Algorithms, Part I.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloGoodbye.class" beforeDir="false" afterPath="$PROJECT_DIR$/HelloGoodbye.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloGoodbye.java" beforeDir="false" afterPath="$PROJECT_DIR$/HelloGoodbye.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/HelloWorld.class" beforeDir="false" afterPath="$PROJECT_DIR$/HelloWorld.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomWord.class" beforeDir="false" afterPath="$PROJECT_DIR$/RandomWord.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/RandomWord.java" beforeDir="false" afterPath="$PROJECT_DIR$/RandomWord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../percolation (2).zip" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../percolation/Percolation.java" beforeDir="false" afterPath="$PROJECT_DIR$/../percolation/Percolation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,24 +50,13 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;erinmi4&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;git@github.com:erinmi4/PrincetonAlgorithm.git&quot;,
-    &quot;accountId&quot;: &quot;5e9ad397-34a7-4327-bd13-642d643cc6cf&quot;
-  }
-}</component>
   <component name="OptimizeOnSaveOptions">
     <option name="myRunOnSave" value="true" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 6
-}</component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "customColor": "",
+  "associatedIndex": 6
+}]]></component>
   <component name="ProjectFrameBounds">
     <option name="x" value="106" />
     <option name="y" value="23" />
@@ -68,9 +64,6 @@
     <option name="height" value="765" />
   </component>
   <component name="ProjectId" id="2BZwWqOJeDbrQGpNxQL7XU2irA8" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="1" id="Add" />
-  </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
       <showLibraryContents PackagesPane="false" />
@@ -106,16 +99,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/lecture/PrincetonAlgorithm/Library/algs4.jar",
+    "last_opened_file_path": "D:/Java/lib/algs4.jar",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "模块",
+    "project.structure.last.edited": "全局库",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.25747126",
     "vue.rearranger.settings.migration": "true",
@@ -125,8 +117,8 @@
   }
 }]]></component>
   <component name="RunManager">
-    <configuration name="HelloWorld" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="HelloWorld" />
+    <configuration name="RandomWord" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="RandomWord" />
       <module name="Algorithms, Part I" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -134,7 +126,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.HelloWorld" />
+        <item itemvalue="应用程序.RandomWord" />
       </list>
     </recent_temporary>
   </component>
@@ -149,15 +141,11 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="默认任务">
-      <created>1726308497499</created>
+      <created>1728573579183</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1726308497499</updated>
-      <workItem from="1726308498735" duration="1138000" />
-      <workItem from="1726309659578" duration="985000" />
-      <workItem from="1726310811329" duration="1216000" />
-      <workItem from="1726313265898" duration="1707000" />
-      <workItem from="1726315012947" duration="2247000" />
+      <updated>1728573579183</updated>
+      <workItem from="1728573579185" duration="2596000" />
     </task>
     <servers />
   </component>

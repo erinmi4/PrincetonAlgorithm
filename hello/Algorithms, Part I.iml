@@ -14,9 +14,8 @@
       <excludePattern pattern="*.class" />
       <excludePattern pattern=".noai" />
     </content>
-    <orderEntry type="jdk" jdkName="17" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" exported="" name="algs4" level="project" />
-    <orderEntry type="library" name="algs5" level="project" />
+    <orderEntry type="library" name="algs4" level="application" />
   </component>
 </module>

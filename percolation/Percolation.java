@@ -68,7 +68,7 @@ public class Percolation {
     }
   }
 
-  public int xyTo1D(int r, int c) {
+  private int xyTo1D(int r, int c) {
     return r * nmatrix + c;
   }
 
@@ -103,7 +103,7 @@ public class Percolation {
   /**
   *判断周围的点是否打开.
   */
-  public int aroundppenhad(int row, int col) {
+  private int aroundppenhad(int row, int col) {
     List<Integer> neighbors = getValidNeighbors(row, col);
     for (int site : neighbors) {
       if (openSituation[site] == 1) {
@@ -136,7 +136,7 @@ public class Percolation {
   /**
    * 判断坐标是否是合法坐标.
    */
-  public void checkSites(int rows, int cols) {
+  private void checkSites(int rows, int cols) {
     if (rows < 0 || rows >= nmatrix || cols < 0 || cols >= nmatrix) {
       throw new IllegalArgumentException();
     }
