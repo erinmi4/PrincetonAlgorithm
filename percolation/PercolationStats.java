@@ -1,73 +1,64 @@
 import edu.princeton.cs.algs4.StdRandom;
 import edu.princeton.cs.algs4.StdStats;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
+
 public class PercolationStats {
 
-    int trial;
+    int trials;
     int range;
-    int[] opensites;//判断打开了times次数后，系统开始渗透
-    Percolation sites;
+    int[] openSites; // 保存每次试验中打开的站点数量
     double mean, stddev, lo, hi;
+    int boad;
     // perform independent trials on an n-by-n grid
     public PercolationStats(int n, int trials) {
         range = n;
-        trial = trials;
-        //打开了n次，就有n个数值
-        opensites = new int[n];
-        for (int i = 0; i < n; i++) {
-            //创建sites
-        sites = new Percolation(n);
-        int times = 0; //追踪打开的site的个数，直到渗透
-        while (!sites.percolates()) {
-            times++;
-            sites.open(StdRandom.uniform(n) + 1, StdRandom.uniform(n) + 1);//随机打开一个site
-        }
-        opensites[i] = times;
+        this.trials = trials;
+        openSites = new int[trials]; // 大小应为试验次数，而非网格维度
+        boad =  range * range;
+        for (int i = 0; i < trials; i++) {
+            // 创建一个新的 Percolation 实例
+            Percolation sites = new Percolation(n);
+            int times = 0; // 追踪打开的 site 的个数，直到系统渗透
+
+            // 随机打开站点，直到系统渗透
+            while (!sites.percolates()) {
+                int row = StdRandom.uniform(n) + 1;
+                int col = StdRandom.uniform(n) + 1;
+
+                if (!sites.isOpen(row, col)) { // 确保不会重复打开同一个站点
+                    sites.open(row, col);
+                    times++;
+                }
+            }
+            openSites[i] = times; // 记录当前试验中打开的站点数量
         }
     }
 
     // sample mean of percolation threshold
     public double mean() {
-        double sum = 0;
-        for (int i = 0; i < range; i++) {
-            sum += opensites[i];
-        }
-        mean = (sum / range);
-        return mean;
+        return StdStats.mean(openSites) / boad ; // 使用 StdStats 的方法来计算平均值
     }
 
     // sample standard deviation of percolation threshold
     public double stddev() {
-        double xDarsh = mean();
-        double sum = 0;
-        for (int i = 0; i < range; i++) {
-            sum += (opensites[i] - xDarsh) * (opensites[i] - xDarsh);
-        }
-        double ssquare = sum / trial - 1;
-        double s = Math.sqrt(ssquare);
-        stddev = s;
-        return stddev;
+        return StdStats.stddev(openSites) / boad; // 使用 StdStats 的方法来计算标准差
     }
 
     // low endpoint of 95% confidence interval
     public double confidenceLo() {
-        lo = mean() - 1.96 * stddev() / Math.sqrt(trial);
-        return lo;
+        return mean() - 1.96 * stddev() / Math.sqrt(trials);
     }
 
     // high endpoint of 95% confidence interval
     public double confidenceHi() {
-        hi = mean() + 1.96 * stddev() / Math.sqrt(trial);
-        return hi;
+        return mean() + 1.96 * stddev() / Math.sqrt(trials);
     }
 
-   // test client (see below)
-   public static void main(String[] args) {
-        //PercolationStats test = new PercolationStats(Integer.parseInt(args[0]),Integer.parseInt(args[1]));
-       PercolationStats test = new PercolationStats(200,100);
-        System.out.println("mean                    ="+test.mean());
-        System.out.println("stddev                  ="+test.stddev());
-        System.out.println("95% confidence interval ="+"["+test.confidenceLo()+","+test.confidenceHi()+"]");
-   }
-
+    // test client (optional)
+    public static void main(String[] args) {
+        PercolationStats test = new PercolationStats(Integer.parseInt(args[0]),Integer.parseInt(args[1]));
+        System.out.println("mean                    = " + test.mean());
+        System.out.println("stddev                  = " + test.stddev());
+        System.out.println("95% confidence interval = [" + test.confidenceLo() + ", " + test.confidenceHi() + "]");
+    }
 }
