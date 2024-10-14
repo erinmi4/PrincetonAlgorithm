@@ -33,7 +33,7 @@ public class Percolation {
         }
     }
 
-    // 与周围打开的站点相连
+    // 与周围打开的站点相连,注意判断，如果已经与周围相连，那么就不必要再次与周围连接。
     private void unionAround(int row, int col) {
         int[] changeRow = new int[]{-1, 0, 0, 1};  // 上左下右
         int[] changeCol = new int[]{0, -1, 1, 0};
@@ -44,7 +44,11 @@ public class Percolation {
 
             // 检查邻接点是否在范围内并且是打开的
             if (neighborRow >= 1 && neighborRow <= range && neighborCol >= 1 && neighborCol <= range && isOpen(neighborRow, neighborCol)) {
-                uf.union(positionCalculate(row, col), positionCalculate(neighborRow, neighborCol));
+                int currentIndex = positionCalculate(row, col);
+                int neighborIndex = positionCalculate(neighborRow, neighborCol);
+                if (uf.find(currentIndex) != uf.find(neighborIndex)) {  // 仅当尚未连接时进行 union
+                    uf.union(currentIndex, neighborIndex);
+                }
             }
         }
     }
@@ -55,8 +59,9 @@ public class Percolation {
     }
 
     // 判断站点 (row, col) 是否充满，也就是判断该点是否和顶部相连
+    //在这之前，要判断是否已经被打开了。
     public boolean isFull(int row, int col) {
-        return uf.find(top) == uf.find(positionCalculate(row, col));
+        return isOpen(row, col) && uf.find(top) == uf.find(positionCalculate(row, col));
     }
 
     // 返回打开的站点数量
