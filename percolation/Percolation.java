@@ -4,7 +4,7 @@ public class Percolation {
     private int top;  // 连接顶部的表格元素
     private int bottom;  // 连接底部的表格元素
     private int range;  // 表示网格的大小 n
-    private int[] openState;  // 表示每个站点的开关状态，默认都为0（关闭）
+    private boolean[] openState;  // 表示每个站点的开关状态，默认都是 false（关闭）
     private WeightedQuickUnionUF uf;
 
     // 创建 n-by-n 网格，所有站点初始为阻塞状态
@@ -13,12 +13,9 @@ public class Percolation {
         top = n * n;  // top 位于 n*n 的位置
         bottom = top + 1;  // bottom 位于 n*n + 1 的位置
         range = n;
-        openState = new int[n * n + 2];  // 包含顶部和底部额外的两个点
-        for (int i = 0; i < openState.length; i++) {
-            openState[i] = 0;  // 初始所有点都是关闭状态
-        }
-        openState[top] = 1;  // top 默认打开
-        openState[bottom] = 1;  // bottom 默认打开
+        openState = new boolean[n * n + 2];  // 包含顶部和底部额外的两个点
+        openState[top] = true;  // top 默认打开
+        openState[bottom] = true;  // bottom 默认打开
 
         // 将 top 与第一行所有站点连接，bottom 与最后一行所有站点连接
         for (int i = 0; i < n; i++) {
@@ -30,8 +27,8 @@ public class Percolation {
     // 打开指定的站点（row, col），如果尚未打开
     public void open(int row, int col) {
         int index = positionCalculate(row, col);
-        if (openState[index] == 0) {  // 如果该点未打开，则打开
-            openState[index] = 1;
+        if (!openState[index]) {  // 如果该点未打开，则打开
+            openState[index] = true;
             unionAround(row, col);  // 与相邻的打开站点连接
         }
     }
@@ -54,7 +51,7 @@ public class Percolation {
 
     // 判断站点 (row, col) 是否打开
     public boolean isOpen(int row, int col) {
-        return openState[positionCalculate(row, col)] == 1;
+        return openState[positionCalculate(row, col)];
     }
 
     // 判断站点 (row, col) 是否充满，也就是判断该点是否和顶部相连
@@ -66,7 +63,7 @@ public class Percolation {
     public int numberOfOpenSites() {
         int count = 0;
         for (int i = 0; i < range * range; i++) {
-            if (openState[i] == 1) {
+            if (openState[i]) {
                 count++;
             }
         }
