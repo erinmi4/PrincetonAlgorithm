@@ -1,5 +1,3 @@
-import edu.princeton.cs.algs4.StdRandom;
-import edu.princeton.cs.algs4.StdStats;
 import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
@@ -67,7 +65,7 @@ public class Percolation {
     // 返回打开的站点数量
     public int numberOfOpenSites() {
         int count = 0;
-        for (int i = 1; i <= Range * Range; i++) {
+        for (int i = 0; i < Range * Range; i++) {
             if (OpenState[i] == 1) {
                 count++;
             }

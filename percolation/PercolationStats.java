@@ -21,8 +21,8 @@ public class PercolationStats {
 
             // 随机打开站点，直到系统渗透
             while (!Sites.percolates()) {
-                int row = StdRandom.uniform(n) + 1;
-                int col = StdRandom.uniform(n) + 1;
+                int row = StdRandom.uniformInt(1,n + 1);
+                int col = StdRandom.uniformInt(1,n + 1);
 
                 if (!Sites.isOpen(row, col)) { // 确保不会重复打开同一个站点
                     Sites.open(row, col);
